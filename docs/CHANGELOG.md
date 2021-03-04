@@ -3,6 +3,7 @@ Latest changes
 
 - Freetz-NG
   * [devel](#devel)
+  * [ng21030](#ng21030)
   * [ng21010](#ng21010)
   * [ng20120](#ng20120)
 
@@ -40,6 +41,15 @@ Latest changes
    * Replace kernel does not work for most latest firmware versions.
    * Loading build kernel modules may work or do not. You'll notice.
 
+ - Firmware updates:
+   * Please see [FIRMWARES](FIRMWARES.md) for the list of currently supported devices and firmwares.
+
+### ng21030
+
+ - Known problems:
+   * Replace kernel does not work for most latest firmware versions.
+   * Loading build kernel modules may work or do not. You'll notice.
+
  - Build system:
    * ccache 4.2
    * kernel-/target-toolchain:
@@ -50,6 +60,7 @@ Latest changes
 
  - New tools and hooks:
    * pseudo 1.9.0 oe-core
+   * yourfritz-decoder 0.4-git
 
  - Updated tools and hooks:
    * fakeroot 1.25.3
@@ -71,6 +82,9 @@ Latest changes
    * rsync 3.2.3
    * wireguard-linux-compat 1.0.20210124
    * lzma2 5.2.5
+
+ - Firmware updates:
+   * Please see [FIRMWARES](FIRMWARES.md) for the list of currently supported devices and firmwares.
 
 ### ng21010
 

@@ -22,9 +22,7 @@ FAKEROOT_HOST_TARGET_BIARCH_LIB:=$(FAKEROOT_HOST_BIARCH_LD_PRELOAD_PATH)/libfake
 # We need 32-bit fakeroot support if we use the 32-bit mips*-linux-strip during fwmod on a 64-bit host
 # The correct condition here would be:
 # (using 32-bit [tools/toolchains] [own/dl]) AND (any of the STRIP-options is selected) AND (host is 64-bit)
-BIARCH_BUILD_SYSTEM:=$(and \
-	$(FREETZ_TOOLCHAIN_32BIT), \
-	$(filter-out 32,$(HOST_BITNESS)))
+BIARCH_BUILD_SYSTEM:=$(filter-out 32,$(HOST_BITNESS))
 
 
 fakeroot-host-source: $(DL_DIR)/$(FAKEROOT_HOST_SOURCE)
@@ -53,7 +51,9 @@ $(FAKEROOT_HOST_MAINARCH_DIR)/.configured: $(FAKEROOT_HOST_DIR)/.unpacked
 	touch $@
 $(FAKEROOT_HOST_TARGET_SCRIPT): $(FAKEROOT_HOST_MAINARCH_DIR)/.configured
 	$(MAKE) -C $(FAKEROOT_HOST_MAINARCH_DIR) install
-	$(SED) -i -e 's,^PATHS=.*,PATHS=$(FAKEROOT_HOST_MAINARCH_LD_PRELOAD_PATH):$(FAKEROOT_HOST_BIARCH_LD_PRELOAD_PATH),g' $(FAKEROOT_HOST_TARGET_SCRIPT)
+	$(SED) -i 's,^FAKEROOT_PREFIX=.*,FAKEROOT_PREFIX="$$(readlink -f $$0 | sed "s!/bin/fakeroot\\$$!!")",'  $(FAKEROOT_HOST_TARGET_SCRIPT)
+	$(SED) -i 's,^FAKEROOT_BINDIR=.*,FAKEROOT_BINDIR=$${FAKEROOT_PREFIX}/bin,'                              $(FAKEROOT_HOST_TARGET_SCRIPT)
+	$(SED) -i 's,^PATHS=.*,PATHS=$${FAKEROOT_PREFIX}/lib:$${FAKEROOT_PREFIX}/lib32,'                        $(FAKEROOT_HOST_TARGET_SCRIPT)
 
 $(FAKEROOT_HOST_BIARCH_DIR)/.configured: $(FAKEROOT_HOST_DIR)/.unpacked
 	(mkdir -p $(FAKEROOT_HOST_BIARCH_DIR); cd $(FAKEROOT_HOST_BIARCH_DIR); $(RM) config.cache; \

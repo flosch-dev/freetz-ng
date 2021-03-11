@@ -41,8 +41,21 @@ Latest changes
    * Replace kernel does not work for most latest firmware versions.
    * Loading build kernel modules may work or do not. You'll notice.
 
+ - Build system:
+   * kernel-/target-toolchains:
+      + precompiled toolchains updated to x86_64 (only)
+
  - New tools and hooks:
-   * tools/decoder_for_settings_backup can decode an (encrypted only!) settings backup file to restore on another device
+   * precompiled host-tools updated to x86_64 (only)
+
+ - Updated packages and libs:
+   * stunnel 5.58
+   * libgd 2.3.2
+
+ - Web interface:
+   * Settings backup:
+      + Check for identic device, AVM passwords are device specific encoded
+      + Support of encrypted setting backup files (openssl is required)
 
  - Firmware updates:
    * Please see [FIRMWARES](FIRMWARES.md) for the list of currently supported devices and firmwares.

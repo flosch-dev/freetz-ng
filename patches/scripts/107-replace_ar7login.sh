@@ -1,3 +1,15 @@
+[ "$FREETZ_REPLACE_AR7LOGIN" == "y" ] || return 0
+echo1 "replacing ar7login by wrapper"
+
+[ ! -f "${FILESYSTEM_MOD_DIR}/sbin/ar7login" ] && echo2 "file not found" && exit 1
+
+echo2 "renaming ar7login"
+mv -f \
+  "${FILESYSTEM_MOD_DIR}/sbin/ar7login" \
+  "${FILESYSTEM_MOD_DIR}/sbin/ar7login.bin"
+
+echo2 "creating ar7login"
+cat <<'EOF' > "${FILESYSTEM_MOD_DIR}/sbin/ar7login"
 #!/bin/sh
 
 # ar7login wrapper
@@ -24,3 +36,6 @@ else
 	# Otherwise fall back to web password login
 	exec ar7login.bin $@
 fi
+EOF
+chmod +x "${FILESYSTEM_MOD_DIR}/sbin/ar7login"
+

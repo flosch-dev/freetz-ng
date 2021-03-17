@@ -1774,6 +1774,7 @@ config FREETZ_RUN_TELEFON_IN_INHAUS_MODE
 	bool "Run telefon daemon in inhaus mode"
 	depends on FREETZ_AVM_HAS_PHONE
 	depends on !FREETZ_AVM_HAS_TELNETD
+	default y if FREETZ_ADD_TELNETD
 	default n
 	help
 		Running telefon daemon in "inhaus mode" restores:
@@ -1782,6 +1783,16 @@ config FREETZ_RUN_TELEFON_IN_INHAUS_MODE
 		 - Support for telnetd on/off by phone (#96*7* / #96*8*).
 		 - Processing of /var/flash/fx_conf attributes responsible
 		   for automatic start of telnetd.
+
+config FREETZ_REPLACE_AR7LOGIN
+	bool "Replace ar7login"
+	depends on (FREETZ_AVM_HAS_TELNETD && !FREETZ_REMOVE_TELNETD) || FREETZ_ADD_TELNETD
+	default y
+	help
+		If wrapper was started by telnetd AND root password
+		is defined, proceed with regular user/password login.
+		A login with user 'root' is not allowed due to /etc/securetty!
+		Otherwise fall back to web password (and user, if set) login.
 
 config FREETZ_PATCH_START_WLAN_IF_ON_BOOT
 	bool "Start wlan interface on boot"

@@ -201,6 +201,7 @@ menu "Download options"
 		default "ca90a7c34d8ebe45dff4bc5f8d59e2fe"  if FREETZ_AVM_SOURCE_6590_06_87
 		default "c82116524bdfea01646067aa42203e6b"  if FREETZ_AVM_SOURCE_6590_07_02
 		default "5708c5d12150f41761c68fb1f57b1103"  if FREETZ_AVM_SOURCE_6590_07_20
+		default "8fa3af88fbefc7396ea9ffaa7101cc46"  if FREETZ_AVM_SOURCE_6590_07_25
 		default "891f0e25c6f7c11bbade30d3a65bb099"  if FREETZ_AVM_SOURCE_6591_07_04
 		default "8f29d957f11fcc62acc338475da1f4d3"  if FREETZ_AVM_SOURCE_6591_07_13
 		default "c704b8227f2d027ed9b3091aedec7028"  if FREETZ_AVM_SOURCE_6660_07_14
@@ -327,11 +328,13 @@ menu "Download options"
 		default "@AVM/firmware/6490/59088767"                                                                              if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_0X
 		default "@AVM/firmware/6490/758467098"                                                                             if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_1X
 		default "@AVM/firmware/6490/9764886654"                                                                            if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_2X
+		default "@AVM/fritzbox-6490-cable/{deutschland,other}/fritz.os"                                                    if FREETZ_TYPE_6490
 		#
 		default "@AVM/firmware/6590/89043528"                                                                              if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_06_8X
 		default "@AVM/firmware/6590/67447023"                                                                              if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_07_0X
 		default "@AVM/firmware/6590/89754687"                                                                              if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_07_1X
 		default "@AVM/firmware/6590/54904304"                                                                              if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_07_2X
+		default "@AVM/fritzbox-6590-cable/{deutschland,other}/fritz.os"                                                    if FREETZ_TYPE_6590
 		#
 		default "@AVM/fritzbox-6591-cable/deutschland/fritz.os"                                                            if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_0X
 		default "@AVM/firmware/6591/213215464"                                                                             if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_1X
@@ -598,13 +601,13 @@ menu "Download options"
 		default "FRITZ.Box_6490_Cable.de-en-es-it-fr-pl.141.07.02.image"                       if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_0X
 		default "FRITZ.Box_6490_Cable-07.12.image"                                             if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_1X
 		default "FRITZ.Box_6490_Cable-07.20.image"                                             if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_2X
-		default "FRITZ.Box_6490_Cable-07.24-85831-LabBETA.image"                               if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_25_LABOR
+		default "FRITZ.Box_6490_Cable-07.25.image"                                             if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_25
 		#
 		default "FRITZ.Box_6590_Cable.de-en-es-it-fr-pl.148.06.87.image"                       if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_06_8X
 		default "FRITZ.Box_6590_Cable.de-en-es-it-fr-pl.148.07.02.image"                       if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_07_0X
 		default "FRITZ.Box_6590_Cable-07.12.image"                                             if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_07_1X
 		default "FRITZ.Box_6590_Cable-07.20.image"                                             if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_07_2X
-		default "FRITZ.Box_6590_Cable-07.24-85832-LabBETA.image"                               if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_07_25_LABOR
+		default "FRITZ.Box_6590_Cable-07.25.image"                                             if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_07_25
 		#
 		default "FRITZ.Box_6591_Cable-07.04.image"                                             if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_0X
 		default "FRITZ.Box_6591_Cable-07.13.image"                                             if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_1X
@@ -869,8 +872,6 @@ menu "Download options"
 		default "fritzrepeater-2400-labor-85466.zip"    if FREETZ_TYPE_2400
 		default "fritzrepeater-3000-labor-85468.zip"    if FREETZ_TYPE_3000
 		default "fritzbox-4040-labor-85886.zip"         if FREETZ_TYPE_4040
-		default "fritzbox-6490-labor-85831.zip"         if FREETZ_TYPE_6490
-		default "fritzbox-6590-labor-85832.zip"         if FREETZ_TYPE_6590
 		default "fritzbox-6591-labor-87307.zip"         if FREETZ_TYPE_6591
 		default "fritzbox-6660-labor-87309.zip"         if FREETZ_TYPE_6660
 		default "fritzbox-6820v1_lte-labor-86509.zip"   if FREETZ_TYPE_6820_V1

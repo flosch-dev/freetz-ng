@@ -48,7 +48,7 @@ $(PKG)_PATCH_POST_CMDS += touch -t 200001010000.00 ./configure.ac;
 # add EXTRA_(C|LD)FLAGS
 $(PKG)_PATCH_POST_CMDS += $(call PKG_ADD_EXTRA_FLAGS,(C|LD)FLAGS)
 
-$(PKG)_EXTRA_CFLAGS  += -ffunction-sections -fdata-sections
+$(PKG)_EXTRA_CFLAGS  += -ffunction-sections -fdata-sections -DDISABLE_ENGINES
 $(PKG)_EXTRA_LDFLAGS += -Wl,--gc-sections
 
 ifeq ($(strip $(FREETZ_PACKAGE_TOR_STATIC)),y)

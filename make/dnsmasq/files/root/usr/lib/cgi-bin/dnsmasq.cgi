@@ -15,7 +15,7 @@ check "$DNSMASQ_WRAPPER" yes:wrapper
 check "$DNSMASQ_MULTID_RESTART" yes:multid_restart
 check "$DNSMASQ_LOG_QUERIES" yes:log_queries
 check "$DNSMASQ_DNSSEC" yes:dnssec
-check "$DNSMASQ_DHCPHOST_FILE" yes:dhcphostfile
+check "$DNSMASQ_DHCPHOSTFILE" yes:dhcphostfile
 
 sec_begin "$(lang de:"Starttyp" en:"Start type")"
 cgi_print_radiogroup_service_starttype "enabled" "$DNSMASQ_ENABLED" "" "" 0
@@ -112,7 +112,7 @@ cat << EOF
 </p>
 <p>
 <input type="hidden" name="dhcphostfile" value="no">
-<input id="dhcphostfile1" type="checkbox" name="dhcphostfile" value="no"$dhcphostfile_chk><label for="dhcphostfile1"> $(lang de:"Lese DHCP host Informationen aus einer Datei." en:"Read DHCP host information from the specified file.")</label><br>
+<input id="dhcphostfile1" type="checkbox" name="dhcphostfile" value="yes"$dhcphostfile_chk><label for="dhcphostfile1"> $(lang de:"Lese DHCP host Informationen aus einer Datei." en:"Read DHCP host information from the specified file.")</label><br>
 </p>
 <p>
 <input type="hidden" name="wpadfix" value="no">

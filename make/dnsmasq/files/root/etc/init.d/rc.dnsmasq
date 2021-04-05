@@ -75,9 +75,7 @@ case $1 in
 		modreg cgi $DAEMON "$DAEMON_LONG_NAME"
 		modreg daemon $DAEMON
 		modreg file $DAEMON extra 'extra' 0 dnsmasq_extra
-		if [ "$DNSMASQ_DHCPHOST_FILE" = "yes" ]; then
-			modreg file $DAEMON dhcphosts 'dhcphosts' 0 dnsmasq_dhcphosts
-		fi
+		modreg file $DAEMON dhcphosts 'DHCP-hosts' 0 dnsmasq_dhcphosts
 		modlib_add_user_and_group nobody
 		mkdir -p ${PID_FILE%/*}
 		chown nobody:nobody ${PID_FILE%/*}

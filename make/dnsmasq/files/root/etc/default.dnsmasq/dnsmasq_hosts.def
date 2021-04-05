@@ -1,5 +1,0 @@
-CAPTION='Dnsmasq: $(lang de:"hosts Datei" en:"hosts file")'
-DESCRIPTION='$(lang de:"Beispiel: 192.168.178.2 &lt;hostA&gt; &lt;aliasB&gt; &lt;aliasC&gt; &lt;...&gt;" en:"Example: 192.168.178.2 <hostA> <aliasB> <aliasC> <...>")'
-CONFIG_FILE='/tmp/flash/dnsmasq/dnsmasq.hosts'
-CONFIG_SAVE='modsave flash; /mod/etc/init.d/rc.dnsmasq reload'
-CONFIG_TYPE='text'

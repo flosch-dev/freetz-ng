@@ -15,7 +15,7 @@ check "$DNSMASQ_WRAPPER" yes:wrapper
 check "$DNSMASQ_MULTID_RESTART" yes:multid_restart
 check "$DNSMASQ_LOG_QUERIES" yes:log_queries
 check "$DNSMASQ_DNSSEC" yes:dnssec
-check "$DNSMASQ_DHCPHOST_FILE" no:dhcphostfile
+check "$DNSMASQ_DHCPHOST_FILE" yes:dhcphostfile
 
 sec_begin "$(lang de:"Starttyp" en:"Start type")"
 cgi_print_radiogroup_service_starttype "enabled" "$DNSMASQ_ENABLED" "" "" 0
